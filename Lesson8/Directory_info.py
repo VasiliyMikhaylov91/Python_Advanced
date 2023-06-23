@@ -12,6 +12,7 @@ import json
 import csv
 import pickle
 
+
 def getsize_directory(directory: str) -> int:
     result = 0
     chdir(directory)
@@ -75,4 +76,3 @@ if __name__ == '__main__':
     save_json('file', data)
     # save_csv('file', data)
     save_pickle('file', data)
-
