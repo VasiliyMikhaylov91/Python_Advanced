@@ -2,23 +2,24 @@ import csv
 
 
 class Text:
-    def __init__(self, param):
-        self.param = param
+    def __init__(self, param1, param2):
+        self.param1 = param1
+        self.param2 = param2
 
     def __set_name__(self, owner, name):
         self.param_name = '_' + name
 
     def __set__(self, instance, value):
-        if self.param(value):
+        if self.param1(value) and self.param2(value):
             setattr(instance, self.param_name, value)
         else:
             raise ValueError(f'Bad {value}')
 
 
 class Student:
-    first_name = Text(str.istitle and str.isalpha)
-    patronymic_name = Text(str.istitle and str.isalpha)
-    last_name = Text(str.istitle and str.isalpha)
+    first_name = Text(str.istitle, str.isalpha)
+    patronymic_name = Text(str.istitle, str.isalpha)
+    last_name = Text(str.istitle, str.isalpha)
 
     def __init__(self, first_name: str, patronymic_name: str, last_name: str, objects_file_csv_path: str):
         self.first_name = first_name
