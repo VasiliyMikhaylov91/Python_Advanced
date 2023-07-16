@@ -6,6 +6,7 @@ class Rectangle_Exception(ValueError):
         return f'Задана сторона с длинной {self.value}\n' \
                f'Невозможно сознать прямоугольник с отрицательным значением стороны'
 
+
 class Rectangle:
     '''Creating rectangle by two sides'''
 
