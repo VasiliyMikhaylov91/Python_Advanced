@@ -22,7 +22,7 @@ class Rectangle:
         '''Initialisation new rectangle by a and b sides'''
         if a < 0:
             raise Rectangle_Exception(a)
-        if b < 0:
+        if b and b < 0:
             raise Rectangle_Exception(b)
         self.a = a
         self.b = b if b is not None else a
